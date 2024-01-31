@@ -200,8 +200,7 @@ with open('17_10100.txt','r',encoding='utf-8') as f:
 for a in range(1000):
     if all(f(x,y,a) for x in range(100) for y in range(100)):
         print(a)
-        break'''
-#повторение рекурсии 
+        break''' 
 # задание № 9 
 with open("9_9892.csv",'r') as f:
     a,k,counter = 0,0,0
