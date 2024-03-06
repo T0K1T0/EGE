@@ -67,3 +67,31 @@ with open("9_9892.csv",'r') as f:
             counter+=1
     print(a//counter)
 '''
+'''#Задание № 5 (11562)
+def f(x):
+    res = ''
+    while x!=0:
+        res+=str(x%6)
+        x//=6
+    return res[::-1]
+
+arr = []
+for n in range(1,1000):
+    i = f(n)
+    if n % 3 == 0:
+        i  = i + i[:2]
+    else:
+        i = i + f(n%3*10)
+
+    if int(i,6)>680:
+        arr.append(int(i,6))
+print(min(arr))
+'''
+#Задание № 8 (10710)
+from itertools import product
+result = list()
+words = sorted(product('компьютер',repeat= 5))
+for i,j in enumerate(words,1):
+    if i % 2 != 0 and j[0]!='ь' and j.count('к')==2:
+        result.append(i)
+print(max(result))
