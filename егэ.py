@@ -118,3 +118,25 @@ for x in range(149,0,-1):
     if (5*(150**4) + 1*(150**3) + x*(150**2) + 2*(150**1)+ 9*(150**0) + x * (150**3) + 2 *(150) +3)%149==0:
         print((5*(150**4) + 1*(150**3) + x*(150**2) + 2*(150**1)+ 9*(150**0) + x * (150**3) + 2 *(150) +3)//149)'''
 
+'''
+from collections import Counter
+class Solution:
+    def maxFrequencyElements(self, nums: list[int]) -> int:
+
+        arr = dict(Counter(nums))
+        result = 0
+        maxi = 0
+
+        for i in nums:
+            if arr[i] > maxi:
+                maxi = arr[i]
+        
+        for i in arr:
+            if arr[i] == maxi:
+                result+=maxi
+        
+        return result
+
+test = Solution()
+print(test.maxFrequencyElements([1,2,3,4,5]))
+'''
