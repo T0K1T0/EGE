@@ -116,27 +116,26 @@ with open('9_10711.csv','r') as f:
 
 for x in range(149,0,-1):
     if (5*(150**4) + 1*(150**3) + x*(150**2) + 2*(150**1)+ 9*(150**0) + x * (150**3) + 2 *(150) +3)%149==0:
-        print((5*(150**4) + 1*(150**3) + x*(150**2) + 2*(150**1)+ 9*(150**0) + x * (150**3) + 2 *(150) +3)//149)'''
-
+        print((5*(150**4) + 1*(150**3) + x*(150**2) + 2*(150**1)+ 9*(150**0) + x * (150**3) + 2 *(150) +3)//149)
 '''
-from collections import Counter
-class Solution:
-    def maxFrequencyElements(self, nums: list[int]) -> int:
 
-        arr = dict(Counter(nums))
-        result = 0
-        maxi = 0
+#вариант от яндекса 2 (25 задание эффективный поиск делителей числа)
 
-        for i in nums:
-            if arr[i] > maxi:
-                maxi = arr[i]
-        
-        for i in arr:
-            if arr[i] == maxi:
-                result+=maxi
-        
-        return result
+def deliter(n):
+    large_divisors = []
+    for i in range(2, int(n**0.5)):
+        if n % i == 0:
+            yield i
+            if i*i != n:
+                large_divisors.append(n / i)
+    for divisor in reversed(large_divisors):
+           yield divisor
 
-test = Solution()
-print(test.maxFrequencyElements([1,2,3,4,5]))
-'''
+
+k = 0
+for i in range(650000,10**6):
+  s = list(map(int,list(deliter(i))))
+  if len(s)==6 and len(str(max(s)+min(s)))==4 and k <= 4:
+    print(i,min(s)+max(s))
+    k+=1
+
