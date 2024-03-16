@@ -131,7 +131,6 @@ def deliter(n):
     for divisor in reversed(large_divisors):
            yield divisor
 
-
 k = 0
 for i in range(650000,10**6):
   s = list(map(int,list(deliter(i))))
