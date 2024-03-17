@@ -1,6 +1,8 @@
+
+from itertools import *
 '''
 #задание № 8 
-from itertools import *
+
 x = set([''.join(i) for i in list(permutations("АВРОРА"))])
 z = [i for i in x if not(i[0]==i[1] or i[1]==i[2] or  i[2]==i[3] or  i[3]==i[4] or  i[4]==i[5]) ]
 print(len(z))
@@ -66,8 +68,7 @@ with open("9_9892.csv",'r') as f:
             a +=k
             counter+=1
     print(a//counter)
-'''
-'''#Задание № 5 (11562)
+#Задание № 5 (11562)
 def f(x):
     res = ''
     while x!=0:
@@ -88,7 +89,7 @@ for n in range(1,1000):
 print(min(arr))
 
 #Задание № 8 (10710)
-from itertools import product
+
 result = list()
 words = sorted(product('компьютер',repeat= 5))
 for i,j in enumerate(words,1):
@@ -109,15 +110,14 @@ with open('9_10711.csv','r') as f:
             dictionary[counter] = file[i]
         counter+=1
     print(sum(dictionary[min(dictionary)]))
-'''
-'''
+
 # Задание № 14(11564)
 
 
 for x in range(149,0,-1):
     if (5*(150**4) + 1*(150**3) + x*(150**2) + 2*(150**1)+ 9*(150**0) + x * (150**3) + 2 *(150) +3)%149==0:
         print((5*(150**4) + 1*(150**3) + x*(150**2) + 2*(150**1)+ 9*(150**0) + x * (150**3) + 2 *(150) +3)//149)
-'''
+
 
 #вариант от яндекса 2 (25 задание эффективный поиск делителей числа)
 
@@ -138,3 +138,118 @@ for i in range(650000,10**6):
     print(i,min(s)+max(s))
     k+=1
 
+
+# Задание № 5 (12914)
+res = []
+for n in range(1,100):
+    r = bin(n)[2::]
+    if n % 3 == 0:
+        r = r.replace('0','11')
+    else:
+        r = r.replace('1','10')
+    if int(r,2) <=161:
+        res.append(int(r,2))
+print(max(res))
+
+
+
+#задание № 8 (12917)
+
+inf = set(permutations('просто'))
+res = set()
+
+for i in inf:
+    if all([True if  i[j]!=i[j+1] else False for j in range(len(i)-1) ]):
+        res.add(i)
+
+print(len(res))
+
+#задание № 9 (12918)
+with open('EGE/9_12918.csv','r') as f:
+
+    file_info = [list(map(int,i.split(';'))) for i in f]
+
+    for i in file_info:
+
+        arr_condition_1 = set(filter(lambda x: i.count(x) == 2,i))
+        arr_condition_2 = set(filter(lambda x: i.count(x) == 1,i))
+        arr_condition_3 = sorted(i)
+
+        if  len(arr_condition_1) == 2 and len(arr_condition_2) == 2 and not arr_condition_3[-1] in arr_condition_1 and (arr_condition_3[0]*arr_condition_3[-1])>sum(arr_condition_3[1:-1]):
+            print(sum(arr_condition_3))
+            break
+
+
+# задание № 15(12924)
+p = [i for i in range(2,21,2)]
+q = [i for i in range(3,31,3)]
+a = [i for i in range(-100,1000)]
+s = set()
+
+for x in a:
+    if (((x in a)<=(x in p)) and (not(x in q) <= (not (x in a)))) == True:
+        s.add(x)
+print(print(s))
+
+
+# задание № 16(12925)
+
+from math import factorial
+
+print(factorial(2024)//factorial(2022))
+
+
+
+
+# задание № 12(12921)
+
+for i in range(4,10000):
+    s = '5' + '2' * i
+    while '52' in s or '2222' in s or '1122' in s:
+        if '52' in s:
+            s = s.replace('52','11',1)
+        if '2222' in s:
+            s = s.replace('2222','5',1)
+        if '1122' in s:
+            s = s.replace('1122','25',1)
+    if sum(map(int,s))%10 == 7:
+        print(i)
+        break
+
+
+
+combination = set(product('01',repeat = 3))
+k = 0
+for i in combination:
+    s = '00010' + ''.join(i)
+    if not '101' in s:
+        k+=1
+
+print(k)
+
+# для определения переменных (2 задание)
+
+from itertools import *
+
+def g(x,y,z):
+    return (not(x) and y and z) or (not(x) and not(z))
+
+table = [(0,0,0),(1,0,0),(1,1,0)]
+
+for i in permutations('xyz'):
+    if [g(**dict(zip(i,p)))for p in table ] == [1,1,1]:
+        print(i)
+
+
+#для определения переменных (2 задание) + подстановка числовых значенией
+
+def f(x,y,z,w):
+    return ((y<=x) or ((not z) and w)) == (w==x)
+
+for a in product([0,1],repeat=3):
+    tables = [(a[0],1,0,0),(0,0,0,1),(0,1,a[1],a[2])]
+    if len(tables) == len(set(tables)):
+        for p in permutations('xyzw'):
+            if [f(**dict(zip(p,k))) for k in tables] == [1,1,1]:
+                print(p)
+'''
