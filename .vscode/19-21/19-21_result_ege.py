@@ -1,4 +1,4 @@
-# 2
+# 2 кучи
 def f(s,n,m):
     if s+n>=175:
         return m%2 == 0
@@ -10,7 +10,7 @@ def f(s,n,m):
 print([n for n in range(1,155) if not f(19,n,1) and f(19,n,3) ])
 
 
-# 1
+# 1 куча
 def f(s,m):
     if s>=84:
         return m == 0
