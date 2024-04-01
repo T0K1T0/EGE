@@ -1,5 +1,6 @@
 #задание № 16 
 import functools as fn
+
 @fn.lru_cache
 def f(n):
     if n < 3: return n

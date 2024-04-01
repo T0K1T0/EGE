@@ -20,4 +20,4 @@ with open('24-14100_14100.txt','r') as s:
                 if s[i-len(j)+1:i+1]==j:
                     arr[i] = max(dp[i], arr[i-len(j)] + j,key=len)
 
-print(len(max(arr,key = len)))
+print(len(max(arr, key = len)))

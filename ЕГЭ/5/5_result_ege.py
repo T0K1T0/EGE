@@ -1,5 +1,6 @@
 #Задание № 5 (11562)
-def f(x):
+
+def six(x):
     res = ''
     while x!=0:
         res+=str(x%6)
@@ -8,11 +9,11 @@ def f(x):
 
 arr = []
 for n in range(1,1000):
-    i = f(n)
+    i = six(n)
     if n % 3 == 0:
         i  = i + i[:2]
     else:
-        i = i + f(n%3*10)
+        i = i + six(n%3*10)
 
     if int(i,6)>680:
         arr.append(int(i,6))
@@ -26,6 +27,40 @@ for n in range(1,100):
         r = r.replace('0','11')
     else:
         r = r.replace('1','10')
-    if int(r,2) <=161:
+    if int(r,2) <= 161:
         res.append(int(r,2))
 print(max(res))
+
+
+# вариант от яндекса(4)
+def three(x):
+    res = ''
+    if x == 0:
+        return '0'
+
+    while x!=0:
+        res+=str(x%3)
+        x//=3
+    return res[::-1]
+
+for i in range(1000,1,-1):
+    r = three(i)
+    r+=three(r.count('2'))
+    r+=three(r.count('1'))
+    r+=three(r.count('0'))
+
+    if int(r,3) < 1000:
+        print(i)
+        break
+
+# вариант от яндекса(5)
+for n in range(1000,10**4):
+    
+    t = sum(map(int,str(n)))
+    ost = sorted([str(t % int(i)) if i!='0' else '' for i in str(n)])[::-1]
+
+    if int(''.join(ost))>2000:
+        print(n)
+        break
+
+
