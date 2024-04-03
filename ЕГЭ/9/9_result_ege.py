@@ -1,4 +1,5 @@
 #Задание № 9 (10711)
+
 with open('9_10711.csv','r') as f:
     file = [list(map(int,i.split(';'))) for i in f]
     counter = 1
@@ -11,3 +12,6 @@ with open('9_10711.csv','r') as f:
             dictionary[counter] = file[i]
         counter+=1
     print(sum(dictionary[min(dictionary)]))
+
+
+
