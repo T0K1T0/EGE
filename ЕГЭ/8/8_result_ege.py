@@ -28,3 +28,4 @@ info = [''.join(i) for i in product('0123456789abcdef',repeat = 5) if i[0]!='0']
 result = [i for i in info if sum([i.count(j) for j in '0123456789'])==1]
 print(len(result))
 
+
