@@ -66,3 +66,4 @@ for a in range(100,1,-1):
     if result(a):
         print(a)
         break
+    
