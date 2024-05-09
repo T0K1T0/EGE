@@ -23,9 +23,9 @@ for a in product([0,1],repeat=3):
         for p in permutations('xyzw'):
             if [f(**dict(zip(p,k))) for k in tables] == [1,1,1]:
                 print(p)
-'''
 
-# вариант от Яндекса № 5
+
+# вариант от Яндекса № 5 
 def f(x,w,y):
     return (x and (w<=y)) == 1
 
@@ -38,3 +38,15 @@ for i in product([0,1],repeat=16):
         for j in permutations('xwy'):
             if [f(**dict(zip(j,k))) for k in table] == [0,0,0,0,0,1,1,1]:
                 print(j)
+
+'''
+# вариант № 7
+def F(x,y,w,u):
+    return (not((y<=w)==x)) and u
+
+for com in product([0,1],repeat= 3):
+    table = [(0,1,0,com[0]),(0,1,1,1),(1,0,1,com[1]),(1,com[2],1,1)]
+    if len(table) == len(set(table)):
+        for p in permutations('xywu'):
+            if [F(**dict(zip(p,j))) for j in table] == [0,0,1,1]:
+                print(p)

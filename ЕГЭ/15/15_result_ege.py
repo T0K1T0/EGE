@@ -1,4 +1,4 @@
-'''
+
 # задание № 15(12924)
 p = [i for i in range(2,21,2)]
 q = [i for i in range(3,31,3)]
@@ -38,7 +38,7 @@ for a in range(100,1,-1):
     if moment(a) == 1:
         print(a)
         break
-'''
+
 # вариант от Яндекса № 4
 def f(a):
     for x in range(100):
@@ -49,5 +49,20 @@ def f(a):
 
 for a in range(100):
     if f(a) == 1:
+        print(a)
+        break
+
+
+#вариант 7 от Яндекса 
+
+def result(a):
+    for x in range(100):
+        for y in range(100):
+            if (((x >= a) or (121 >= x ** 2)) and ((y ** 2 < 49 ) or (a<y))) == False:
+                return False
+    return True
+
+for a in range(100,1,-1):
+    if result(a):
         print(a)
         break

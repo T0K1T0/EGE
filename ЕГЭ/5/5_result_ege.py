@@ -1,3 +1,4 @@
+
 #Задание № 5 (11562)
 
 def six(x):
@@ -63,4 +64,23 @@ for n in range(1000,10**4):
         print(n)
         break
 
+# вариант 7 от Яндекса 
+def seven(n):
+    res = ''
+    while n:
+        res+=str(n%7)
+        n//=7
+    return res[::-1]
 
+
+for i in range(100,1,-1):
+    n = seven(i)
+    if i % 7 == 0:
+        n +=n[-2:]
+
+    else:
+        n+=seven((i%7)*2)
+
+    if int(n,7)<220:
+        print(i)
+        break
