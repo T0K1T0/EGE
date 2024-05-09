@@ -27,3 +27,4 @@ with open('9 (3).csv') as f:
             counter+=1
 
     print(counter) 
+    

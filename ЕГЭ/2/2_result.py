@@ -50,3 +50,5 @@ for com in product([0,1],repeat= 3):
         for p in permutations('xywu'):
             if [F(**dict(zip(p,j))) for j in table] == [0,0,1,1]:
                 print(p)
+
+                

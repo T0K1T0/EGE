@@ -33,6 +33,7 @@ for n in range(1,100):
 print(max(res))
 
 
+
 # вариант от яндекса(4)
 def three(x):
     res = ''

@@ -46,6 +46,7 @@ def f(a,n,m):
         return m == 0
 
     if m == 0:
+        
         return 0
 
     h = [f(a+2,n,m-1),f(a*3,n,m-1),f(a,n+2,m-1),f(a,n*3,m-1)]
