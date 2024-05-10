@@ -1,6 +1,6 @@
 #задание № 8 
 from itertools import *
-
+'''
 res = set()
 
 for i in list(permutations("АВРОРА")):
@@ -43,4 +43,14 @@ for i in product('0123456789abcdef',repeat = 5):
 
 print(len(res))
 
+'''
+# вариант 7 от яндекса
+res = set()
+comb = [''.join(i) for i in product('ВОЗДУХ',repeat=5) ]
+chek = [(0,1),(1,0)]
+chek_2 = ['ОВ','ВО','ХО','ОХ','УВ','ВУ','УХ','ХУ']
+for word in comb:
+    if ((word.count('О'),word.count('У')) in chek and not(any(i for i in chek_2 if i in word))):
+        res.add(word)
 
+print(len(res))
