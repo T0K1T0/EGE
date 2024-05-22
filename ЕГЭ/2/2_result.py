@@ -1,7 +1,7 @@
 # для определения переменных (2 задание)
 
 from itertools import *
-'''
+
 def g(x,y,z):
     return (not(x) and y and z) or (not(x) and not(z))
 
@@ -39,7 +39,6 @@ for i in product([0,1],repeat=16):
             if [f(**dict(zip(j,k))) for k in table] == [0,0,0,0,0,1,1,1]:
                 print(j)
 
-'''
 # вариант № 7
 def F(x,y,w,u):
     return (not((y<=w)==x)) and u
