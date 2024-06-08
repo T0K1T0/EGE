@@ -8,9 +8,9 @@ with open('24.txt','r') as f:
 print(max(res))
 
 #14100
-with open('24-14100_14100.txt','r') as s:
+with open('24-14100_14100.txt','r') as f:
 
-    s = ''.join([i for i in s])
+    s = f.read()
     arr = [''] * len(s)
     prim = ['ABA', 'CB', 'AC' , 'BB', 'ABC', 'BCB', 'BA', 'AB']
 
@@ -23,7 +23,7 @@ with open('24-14100_14100.txt','r') as s:
 print(len(max(arr, key = len)))
 
 with open('24 (1).txt') as f:
-    p = ''.join([i for i in f])
+    p = f.read()
     max_len = 0
     cur_len = 4
     for i in range(4, len(p)):
@@ -40,7 +40,7 @@ with open('24 (1).txt') as f:
 #вариант № 6 от яндекса
 with open('24 (2).txt','r') as f:
 
-    s = ''.join([i for i in f]).replace('E','A').replace('O','A').replace('U','A').replace('L','B').replace('N','B').replace('M','B').replace('K','B')
+    s = f.read().replace('E','A').replace('O','A').replace('U','A').replace('L','B').replace('N','B').replace('M','B').replace('K','B')
 
     max_lenth,now_lenth = 0,0
     for i in range(len(s)-1):
