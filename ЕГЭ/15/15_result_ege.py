@@ -8,7 +8,7 @@ s = set()
 for x in a:
     if (((x in a)<=(x in p)) and (not(x in q) <= (not (x in a)))) == True:
         s.add(x)
-print(print(s))
+print(s)
 
 # задание 15 
 def f(x,y,a):
