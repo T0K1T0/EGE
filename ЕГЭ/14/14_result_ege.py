@@ -1,5 +1,10 @@
-# Задание № 14(11564)
+#Вариант Бахтиева(2024 - 2025)
+def quarterly_system(number):
+    result = ''
+    while number: 
+        result += str(number % 4)
+        number //= 4
+    return result[::-1]
 
-for x in range(149,0,-1):
-    if (5*(150**4) + 1*(150**3) + x*(150**2) + 2*(150**1)+ 9*(150**0) + x * (150**3) + 2 *(150) +3)%149==0:
-        print((5*(150**4) + 1*(150**3) + x*(150**2) + 2*(150**1)+ 9*(150**0) + x * (150**3) + 2 *(150) +3)//149)
+expression = 4**464 + 4**432 + 16**35 - 64**3
+print(quarterly_system(expression).count('3'))
