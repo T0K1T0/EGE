@@ -8,10 +8,12 @@ for x in a:
         s.add(x)
 print(s)
 
+
 #Задание № 10717
 def geometry(k, m, n):
     arr = [k, m, n]
     return max((arr)) < sum(sorted(arr, reverse=True)[1:])
+
 
 def moment(a):
     for k in range(1, 10000):
@@ -21,10 +23,12 @@ def moment(a):
             return 0
     return 1
 
+
 for a in range(100, 1, -1):
     if moment(a) == 1:
         print(a)
         break
+
 
 #Вариант от Яндекса № 4
 def f(a):
@@ -34,10 +38,12 @@ def f(a):
             return 0
     return 1 
 
+
 for a in range(100):
     if f(a) == 1:
         print(a)
         break
+
 
 #Вариант от Яндекса № 7
 def result(a):
@@ -47,6 +53,7 @@ def result(a):
                 and ((y**2 < 49 ) or (a < y))) == False:
                 return False
     return True
+
 
 for a in range(100, 1, -1):
     if result(a):

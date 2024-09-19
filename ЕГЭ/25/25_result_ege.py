@@ -1,5 +1,7 @@
 #вариант номер 7 от Яндекса
 '''
+
+
 def deliter(num):
     max_arr = []
     for d in range(1,int(num**0.5)+1):
@@ -36,6 +38,7 @@ def deliter(num):
 
     for r in reversed(max_arr):
         yield r
+
 
 counter = 0
 
