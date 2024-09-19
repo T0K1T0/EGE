@@ -1,4 +1,4 @@
-#Задание № 12924
+# Задание № 12924
 p = [i for i in range(2, 21, 2)]
 q = [i for i in range(3, 31, 3)]
 a = [i for i in range(-100, 1000)]
@@ -9,7 +9,7 @@ for x in a:
 print(s)
 
 
-#Задание № 10717
+# Задание № 10717
 def geometry(k, m, n):
     arr = [k, m, n]
     return max((arr)) < sum(sorted(arr, reverse=True)[1:])
@@ -30,7 +30,7 @@ for a in range(100, 1, -1):
         break
 
 
-#Вариант от Яндекса № 4
+# Вариант от Яндекса № 4
 def f(a):
     for x in range(100):
         s = (x & 91 == 0) or ((x & 77 == 0) <= (x & a != 0))
@@ -45,7 +45,7 @@ for a in range(100):
         break
 
 
-#Вариант от Яндекса № 7
+# Вариант от Яндекса № 7
 def result(a):
     for x in range(100):
         for y in range(100):

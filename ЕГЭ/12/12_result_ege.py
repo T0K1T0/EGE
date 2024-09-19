@@ -1,4 +1,4 @@
-#Задание № 12921
+# Задание № 12921
 for i in range(4, 10000):
     s = '5' + '2'*i
     while '52' in s or '2222' in s or '1122' in s:
@@ -12,7 +12,7 @@ for i in range(4, 10000):
         print(i)
         break
 
-#Вариант Бахтиева(2024 - 2025)
+# Вариант Бахтиева(2024 - 2025)
 string = '9'*68
 while '22222' in string or '9999' in string:
     if '22222' in string:

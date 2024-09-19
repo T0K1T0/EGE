@@ -1,4 +1,4 @@
-#Задание № 10711
+# Задание № 10711
 with open('9_10711.csv', 'r') as f:
     file = [list(map(int, i.split(';'))) for i in f]
     counter = 1
@@ -12,7 +12,7 @@ with open('9_10711.csv', 'r') as f:
         counter += 1
     print(sum(dictionary[min(dictionary)]))
 
-#Вариант от Яндекса № 7
+# Вариант от Яндекса № 7
 with open('9 (3).csv', 'r') as f:
     file = [list(map(int, i.split(';'))) for i in f]
     counter = 0
@@ -25,7 +25,7 @@ with open('9 (3).csv', 'r') as f:
             counter += 1
     print(counter)
 
-#Вариант Бахтиева(2024 - 2025)
+# Вариант Бахтиева(2024 - 2025)
 lenth = 0
 with open('kege_contest/data_base/9 (1).csv', 'r') as f:
     matrix = [list(map(int, string.split(';'))) for string in f ]

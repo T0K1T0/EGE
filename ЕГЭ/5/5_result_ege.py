@@ -1,4 +1,4 @@
-#Задание № 11562
+# Задание № 11562
 def six(x):
     res = ''
     while x:
@@ -18,7 +18,7 @@ for n in range(1, 1000):
         arr.append(int(i, 6))
 print(min(arr))
 
-#Задание № 12914
+# Задание № 12914
 res = []
 for n in range(1, 100):
     r = bin(n)[2::]
@@ -30,7 +30,7 @@ for n in range(1, 100):
         res.append(int(r, 2))
 print(max(res))
 
-#Вариант от Яндекса № 4
+# Вариант от Яндекса № 4
 def three(x):
     res = ''
     if x == 0:
@@ -50,7 +50,7 @@ for i in range(1000, 1, -1):
         print(i)
         break
 
-#Вариант от Яндекса № 5
+# Вариант от Яндекса № 5
 for n in range(1000, 10**4):
     t = sum(map(int, str(n)))
     ost = sorted([str(t % int(i)) if i != '0' else '' for i in str(n)])[::-1]
@@ -58,7 +58,7 @@ for n in range(1000, 10**4):
         print(n)
         break
 
-#Вариант от Яндекса № 7
+# Вариант от Яндекса № 7
 def seven(n):
     res = ''
     while n:
@@ -76,7 +76,7 @@ for i in range(100, 1, -1):
         print(i)
         break
 
-#Вариант Бахтиева(2024 - 2025)
+# Вариант Бахтиева(2024 - 2025)
 result = []
 for n in range(1, 1000):
     r = bin(n)[2::]

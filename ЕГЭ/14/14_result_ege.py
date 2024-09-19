@@ -1,4 +1,4 @@
-#Вариант Бахтиева(2024 - 2025)
+# Вариант Бахтиева(2024 - 2025)
 def quarterly_system(number):
     result = ''
     while number: 

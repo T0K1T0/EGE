@@ -1,4 +1,4 @@
-#Задание № 5900
+# Задание № 5900
 from re import *
 
 def number(string):

@@ -1,4 +1,4 @@
-#вариант номер 7 от Яндекса
+# вариант номер 7 от Яндекса
 '''
 
 
@@ -22,11 +22,10 @@ def result():
         if len(arr) > 141:
             print(len(arr),max(arr))
 
-
 result()
 
 '''
-#вариант 8 от яндекса 
+# вариант 8 от яндекса 
 def deliter(num):
     max_arr = []
     for d in range(2,int(num**0.5)+1):
