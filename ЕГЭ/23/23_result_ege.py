@@ -16,7 +16,18 @@ def func(num_1, num_2):
         return 0
     if num_1 == num_2:
         return 1
-    return func(num_1 + 3, num_2) + func(num_1 + 4, num_2)
-
+    return func(num_1+3, num_2) + func(num_1+4, num_2)
 
 print(func(num_1=16, num_2=38))
+
+
+# Вариант Бахтиева(2024 - 2025) -> № 2
+def function(x, y):
+    if x < y or x == 24: return 0
+    if x == y: return 1
+    if x > y:
+        return (function(x-2, y) 
+               + function(x-3, y)
+               + function(x//4, y))
+
+print(function(36, 13))

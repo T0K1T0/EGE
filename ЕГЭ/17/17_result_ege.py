@@ -1,5 +1,3 @@
-
-
 # Задание №
 def c(x):
     return 99 < abs(x) <= 999
@@ -43,3 +41,17 @@ with open('kege_contest/data_base/17 (1).txt', 'r') as f:
             max_sum = max(numbers[i]+numbers[i+1], max_sum)
             counter += 1
     print(counter, max_sum)
+
+
+# Вариант Бахтиева(2024 - 2025) -> № 2
+with open('ЕГЭ/17/17 (2).txt', 'r') as f:
+    numbers = [int(s) for s in f]
+    double_digit = [num for num in numbers if len(str(num)) == 2]
+    counter, min_sum = 0, float('inf')
+
+    for i in range(len(numbers)-1):
+        if len(double_digit) == (numbers[i]%10 + numbers[i+1]%10):
+            counter += 1
+            min_sum = min(min_sum, numbers[i] + numbers[i+1])
+
+    print(counter, min_sum)

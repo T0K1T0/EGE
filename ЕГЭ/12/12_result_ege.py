@@ -8,9 +8,11 @@ for i in range(4, 10000):
             s = s.replace('2222', '5', 1)
         if '1122' in s:
             s = s.replace('1122', '25', 1)
+            
     if sum(map(int, s)) % 10 == 7:
         print(i)
         break
+
 
 # Вариант Бахтиева(2024 - 2025)
 string = '9'*68
@@ -19,4 +21,16 @@ while '22222' in string or '9999' in string:
         string = string.replace('22222', '99', 1)
     else:
         string = string.replace('9999', '29', 1)
+
 print(string.count('9'))
+
+
+# Вариант Бахтиева(2024 - 2025) -> № 2
+s = '3'*111
+while '33333' in s or '1111' in s:
+    if '33333' in s:
+        s = s.replace('33333', '111', 1)
+    else:
+        s = s.replace('111', '33', 1)   
+                   
+print(sum(map(int, s)))

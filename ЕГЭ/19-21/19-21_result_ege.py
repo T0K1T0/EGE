@@ -35,6 +35,7 @@ print([n for n in range(1, 134) if not f(16, n, 1) and f(16, n, 3)])
 
 
 # Вариант Бахтиева(2024 - 2025)
+# 19
 def game_stone(s1, m):
     if s1 >= 54:
         return m == 0
@@ -42,17 +43,18 @@ def game_stone(s1, m):
         return 0
     h = [game_stone(s1+2, m-1), game_stone(s1*2, m-1)]
     return any(h) if m % 2 != 0 else all(h)
+
+
+# 20
+def game_stone(s1, m):
+    if s1 >= 54:
+        return m == 0
+    if m == 0:
+        return 0
+    h = [game_stone(s1+2, m-1), game_stone(s1*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
 
 print([s1 for s1 in range(1, 54) if game_stone(s1, 2)])
-
-
-def game_stone(s1, m):
-    if s1 >= 54:
-        return m == 0
-    if m == 0:
-        return 0
-    h = [game_stone(s1+2, m-1), game_stone(s1*2, m-1)]
-    return any(h) if m % 2 != 0 else all(h)
-
 print([s1 for s1 in range(1, 54) if not (game_stone(s1, 1)) and
        game_stone(s1, 3)])

@@ -38,7 +38,7 @@ for com in product([0, 1], repeat=3):
                 print(p)
 
 
-# Вариант Бахтиева(2024 - 2025)
+# Вариант Бахтиева(2024 - 2025) -> № 1
 def get_combination(x, w, z, y):
     return (y <= x) and not (w) and z
 
@@ -50,3 +50,22 @@ for el in product([0, 1], repeat=4):
             if ([get_combination(**dict(zip(p, table)))
                     for table in tables] == [1, 1, 1]):
                 print(p)
+
+
+# Вариант Бахтиева(2024 - 2025) -> № 2
+def f(w, x, y, z):
+    return y and (x or z) and (not (y or z)) or w
+
+
+for i in product([0, 1], repeat=4):
+    table = [
+            (1, i[0], 0, 1),
+            (i[1], 1, 0, i[2]),
+            (0, 0, i[3], 1)
+            ] 
+    if len(table) == len(set(table)):
+        for j in permutations('wxyz'):
+            if ([f(**dict(zip(j, k))) for k in table] ==
+                    [0, 0, 0]):
+                print(j)
+                break

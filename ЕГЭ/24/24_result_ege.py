@@ -14,7 +14,7 @@ with open('24 (1).txt') as f:
     if max_len < cur_len:
         max_len = cur_len
 
-    print(max_len)
+print(max_len)
 
 
 # Вариант Бахтиева(2024 - 2025)

@@ -1,3 +1,6 @@
+from math import floor
+
+
 # Задание № 12924
 p = [i for i in range(2, 21, 2)]
 q = [i for i in range(3, 31, 3)]
@@ -59,4 +62,21 @@ for a in range(100, 1, -1):
     if result(a):
         print(a)
         break
-    
+
+
+# Вариант Бахтиева(2024 - 2025) -> № 2
+def function(x):
+    m = 32 <= x <= 68
+    n = 54 <= x <= 76
+    a = a1 <= x <= a2
+    return not (m or n) == (not a)
+
+
+ox = [x/4 for x in range(32*4, 100*4)]
+m = []
+
+for a1, a2 in combinations(ox, 2):
+    if all(function(x) for x in ox):
+        m.append(a2-a1)
+
+print(floor(min(m)))

@@ -6,6 +6,7 @@ def six(x):
         x //= 6
     return res[::-1]
 
+
 arr = []
 for n in range(1, 1000):
     i = six(n)
@@ -17,6 +18,7 @@ for n in range(1, 1000):
     if int(i, 6) > 680:
         arr.append(int(i, 6))
 print(min(arr))
+
 
 # Задание № 12914
 res = []
@@ -30,6 +32,7 @@ for n in range(1, 100):
         res.append(int(r, 2))
 print(max(res))
 
+
 # Вариант от Яндекса № 4
 def three(x):
     res = ''
@@ -39,6 +42,7 @@ def three(x):
         res += str(x%3)
         x //= 3
     return res[::-1]
+
 
 for i in range(1000, 1, -1):
     r = three(i)
@@ -50,6 +54,7 @@ for i in range(1000, 1, -1):
         print(i)
         break
 
+
 # Вариант от Яндекса № 5
 for n in range(1000, 10**4):
     t = sum(map(int, str(n)))
@@ -58,6 +63,7 @@ for n in range(1000, 10**4):
         print(n)
         break
 
+
 # Вариант от Яндекса № 7
 def seven(n):
     res = ''
@@ -65,6 +71,7 @@ def seven(n):
         res += str(n%7)
         n //= 7
     return res[::-1]
+
 
 for i in range(100, 1, -1):
     n = seven(i)
@@ -75,6 +82,7 @@ for i in range(100, 1, -1):
     if int(n, 7) < 220:
         print(i)
         break
+
 
 # Вариант Бахтиева(2024 - 2025)
 result = []
@@ -88,3 +96,19 @@ for n in range(1, 1000):
     if r > 61:
         result.append(r)
 print(min(result))
+
+
+# Вариант Бахтиева(2024 - 2025) -> № 2
+max_n = 0
+for n in range(1, 1000):
+    r = bin(n)[2::]
+    if n % 5 == 0:
+        r = r[:3] + r
+    else:
+        r = r + bin((n%5)*5)[2:]
+
+    r = int(r, 2)
+    if r < 313 and n % 2 != 0:
+        max_n = max(n, max_n)
+
+print(max_n)
